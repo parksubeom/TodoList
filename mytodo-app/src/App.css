@@ -1,5 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@600&family=Noto+Sans+KR&display=swap');
+
+@font-face {
+  font-family: 'maple';
+  src: url('../public/Maplestory\ Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'cookie';
+  src: url('../public/CookieRunFont_TTF/CookieRun\ Black.ttf') format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: maple;
+  
+
+}
 .App {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-position: center;
+  background: url("https://user-images.githubusercontent.com/104641096/168153681-3de36068-1631-4ec2-a179-6ae02200edb1.jpg") no-repeat center;
+  background-size: cover;
+  
 }
 
 .App-logo {
