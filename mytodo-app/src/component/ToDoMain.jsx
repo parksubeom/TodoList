@@ -6,7 +6,7 @@ import ToDoList from './ToDoList';
 
 const ToDoMainBlock = styled.div`
   width: 500px;
-  height: 700px;
+  min-height: 700px;
   position: relative;
   border-radius: 16px;
   margin: 0 auto;
@@ -24,7 +24,7 @@ const ToDoHeaderBlock = styled.header`
   width: 500px;
   height: 130px;
   position: relative;
-  background: rgba( 252, 191, 237, 0.45 );
+  background: rgba( 252, 201, 237, 0.7 );
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
   margin: 0 auto;
@@ -32,19 +32,20 @@ const ToDoHeaderBlock = styled.header`
   flex-direction: column;
   position: relative;
   h1 {
-    color: #fff6e6;
+    color: #19191c;
     text-align: left;
     margin-left: 10px;
-    margin:20px;
+    margin-top:20px;
   
   }
   h3 {
-    color: #fff6e6;
+    color: #4e4e51;
     text-align: left;
     margin-left: 10px;
+    margin-bottom: 20px;
   }
   h4 {
-    color: #fff6e6;
+    color: #1c1919;
     text-align: left;
     margin-left: 10px;
   }
@@ -53,16 +54,16 @@ const ToDoHeaderBlock = styled.header`
 let today = `${new Date().getFullYear()}년 ${new Date().getMonth() + 1}월 ${new Date().getDate()}일 `; 
 let week = new Array('일','월','화','수','목','금','토')[new Date().getDay()]
 
-function ToDoMain({ todos, setTodos }) {
+function ToDoMain({ todos, setTodos,modal, setModal }) {
+
   return (
     <ToDoMainBlock>
-      <ToDoInsert todos={todos} setTodos={setTodos} />
       <ToDoHeaderBlock>
         <h1>{today }</h1>
         <h3>{week}요일</h3>
         <h4>남은 할 일 {todos.length}개</h4>
       </ToDoHeaderBlock>
-      <ToDoList todos={todos} />
+      <ToDoList todos={todos}  setTodos ={setTodos} setModal={setModal} modal={modal} />
     </ToDoMainBlock>
   );
 }
