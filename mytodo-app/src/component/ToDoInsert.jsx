@@ -71,9 +71,9 @@ function ToDoInsert({ todos, setTodos, setModal }) {
             (e.target.value);
     };
 
-    const onSubmit = (e) => {
+    const addTodo = (e) => {
         e.preventDefault();
-        let copy = [...todos, { id: todos.length + 1, text: inputvalue, checked: false, date: `${limittime}` }]
+        let copy = [...todos, { id: todos[todos.length-1].id + 1, text: inputvalue, checked: false, date: `${limittime}` }]
         setTodos(copy)
         setInputvalue('')
         setModal(false)
@@ -88,7 +88,7 @@ function ToDoInsert({ todos, setTodos, setModal }) {
 
     return (
         <div className="insert">
-            <ToDoInputForm onSubmit={(e) => onSubmit(e)}>
+            <ToDoInputForm onSubmit={(e) =>addTodo(e)}>
                 <ToDoInputbox>
                     <ToDoInputtBlock
                         type="text"
